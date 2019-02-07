@@ -1,0 +1,38 @@
+JMenuBar mnubMybar = new JMenuBar();
+		JMenu mnuFile = new JMenu("File");
+		JMenuItem mnuIOpen = new JMenuItem("Open");
+		JMenuItem mnuIClose = new JMenuItem("Close");
+		mnuFile.add(mnuIOpen);
+		mnuFile.add(mnuIClose);
+		mnubMybar.add(mnuFile);
+		JMenu mnuSubMenu = new JMenu("Save");
+		JMenuItem mnuISave = new JMenuItem("Save");
+		JMenuItem mnuISaveAs = new JMenuItem("Save as");
+		JMenuItem mnuISaveAll = new JMenuItem("Save all");
+		mnuSubMenu.add(mnuISave);
+		mnuSubMenu.add(mnuISaveAs);
+		mnuSubMenu.add(mnuISaveAll);
+		mnuFile.add(mnuSubMenu);
+		mnubMybar.setBounds(0, 0, 450, 20);
+		
+		JMenu mnuHelp = new JMenu("Help");
+		JMenuItem mnuiAbout = new JMenuItem("About");
+		mnuiAbout.addActionListener(actionAbout());
+		mnuHelp.add(mnuiAbout);
+		mnubMybar.add(mnuHelp);
+		content.add(mnubMybar);
+		
+		
+		
+	}
+	
+	private ActionListener actionAbout() {
+		return new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(calFrame, "This the Calculator program", "About",JOptionPane.INFORMATION_MESSAGE);
+				
+			}
+		};
+	}
